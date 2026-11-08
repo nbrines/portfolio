@@ -1,38 +1,34 @@
-import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Download } from "lucide-react"
 
 export default function About() {
   return (
-    <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-6">About Me</h1>
-      
-      <Card className="mb-8">
-        <CardContent className="pt-6 space-y-4">
-          <p className="text-muted-foreground leading-relaxed">
-            Welcome to my portfolio! I am a passionate developer focused on building modern, efficient, and user-friendly web applications.
-          </p>
-          
-          <div className="flex flex-wrap gap-2 pt-2">
-            {["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "JavaScript", "HTML/CSS"].map((skill) => (
-              <Badge key={skill} variant="secondary">
-                {skill}
-              </Badge>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
+    <div className="container mx-auto px-4 py-8 max-w-4xl space-y-6">
+      <div>
+        <h1 className="text-3xl font-bold tracking-tight">About Me</h1>
+        <p className="text-muted-foreground mt-1">Get to know more about my background and technical stack.</p>
+      </div>
 
-      <div className="flex gap-4">
-        <Button asChild>
-          <a href="/contact">Get in Touch</a>
-        </Button>
-        <Button variant="outline" asChild>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-            <Download className="mr-2 h-4 w-4" /> Download CV
-          </a>
-        </Button>
+      <div className="space-y-4 text-muted-foreground leading-relaxed">
+        <p>
+          Hi! I&apos;m <span className="font-semibold text-foreground">Nathan Y. Briñes</span>, a 2nd year Computer Science student at Naga College Foundation in Naga City, Philippines.
+        </p>
+        <p>
+          I focus on building functional web applications, learning modern backend frameworks, and exploring clean UI designs with React and Next.js.
+        </p>
+      </div>
+
+      <div className="space-y-3 pt-4">
+        <h2 className="text-xl font-semibold tracking-tight">Technical Skills</h2>
+        <div className="flex flex-wrap gap-2">
+          <Badge variant="secondary">C++</Badge>
+          <Badge variant="secondary">JavaScript / TypeScript</Badge>
+          <Badge variant="secondary">Next.js</Badge>
+          <Badge variant="secondary">React</Badge>
+          <Badge variant="secondary">Node.js / NestJS</Badge>
+          <Badge variant="secondary">MySQL</Badge>
+          <Badge variant="secondary">Tailwind CSS</Badge>
+          <Badge variant="secondary">Git / GitHub</Badge>
+        </div>
       </div>
     </div>
   )

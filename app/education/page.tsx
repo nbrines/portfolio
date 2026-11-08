@@ -1,73 +1,41 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { GraduationCap, Award } from "lucide-react";
-
-const educationList = [
-  {
-    degree: "Master in Information Technology",
-    institution: "Ateneo Naga University",
-    period: "2012 - 2016",
-    description: "Focused on software engineering, data structures, algorithms, and web development.",
-    achievements: ["Magna Cum Laude", "Dean's List (All Semesters)", "Capstone Project Lead"],
-  },
-  {
-    degree: "BS in Information Technology",
-    institution: "University of Nueva Caceres",
-    period: "2005 - 2010",
-    description: "Intensive program covering React, Node.js, databases, and deployment.",
-    achievements: ["Built 3 full-stack applications", "Peer Code Reviewer"],
-  },
-  {
-    degree: "High School Education",
-    institution: "Ateneo de Naga University",
-    period: "1999 - 2003",
-    description: "Intensive program covering React, Node.js, databases, and deployment.",
-    achievements: ["Built 3 full-stack applications", "Peer Code Reviewer"],
-  },
-];
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { GraduationCap } from "lucide-react"
 
 export default function Education() {
   return (
-    <div className="space-y-8 max-w-3xl mx-auto">
+    <div className="container mx-auto px-4 py-8 max-w-4xl space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Education</h1>
         <p className="text-muted-foreground mt-1">Academic background and formal training.</p>
       </div>
 
-      <div className="space-y-6">
-        {educationList.map((item, idx) => (
-          <Card key={idx}>
-            <CardHeader>
-              <div className="flex items-start justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                    <GraduationCap className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-xl">{item.degree}</CardTitle>
-                    <CardDescription>{item.institution}</CardDescription>
-                  </div>
-                </div>
-                <span className="text-sm font-medium text-muted-foreground">
-                  {item.period}
-                </span>
-              </div>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-muted-foreground">{item.description}</p>
-              <div>
-                <h4 className="text-sm font-semibold flex items-center gap-1.5 mb-2">
-                  <Award className="h-4 w-4 text-primary" /> Key Highlights
-                </h4>
-                <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                  {item.achievements.map((ach, i) => (
-                    <li key={i}>{ach}</li>
-                  ))}
-                </ul>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+      <Card>
+        <CardHeader className="flex flex-row items-center gap-4 pb-2">
+          <div className="p-2 bg-primary/10 rounded-full text-primary">
+            <GraduationCap className="h-6 w-6" />
+          </div>
+          <div className="flex-1 flex justify-between items-start">
+            <div>
+              <CardTitle className="text-xl">BS in Computer Science</CardTitle>
+              <p className="text-sm text-muted-foreground">Naga College Foundation</p>
+            </div>
+            <span className="text-sm font-medium text-muted-foreground">2nd Year Student</span>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-3 pt-2">
+          <p className="text-sm text-muted-foreground">
+            Currently pursuing an undergraduate degree focusing on software engineering, web application development, database design, and computer science fundamentals.
+          </p>
+          <div>
+            <h4 className="text-sm font-semibold mb-2">Key Highlights</h4>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+              <li>Object-Oriented Programming & Data Structures</li>
+              <li>Backend Web Development & Database Engineering</li>
+              <li>Modern Web UI Deployment with Next.js & TypeScript</li>
+            </ul>
+          </div>
+        </CardContent>
+      </Card>
     </div>
-  );
+  )
 }
